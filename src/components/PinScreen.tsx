@@ -44,12 +44,6 @@ function PinScreen({ onSuccess }: Props) {
             setPin(e.target.value.replace(/\D/g, ""));
             setError(false);
           }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              handleSubmit(e);
-            }
-          }}
         />
         {error && <p className="pin-error">Incorrect PIN. Try again.</p>}
         <button className="pin-btn" type="submit">

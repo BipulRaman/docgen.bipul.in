@@ -9,7 +9,13 @@ export function exportToPdf(
   const originalTitle = document.title;
   document.title = fileName;
   element.classList.add("printing");
+
+  const cleanup = () => {
+    element.classList.remove("printing");
+    document.title = originalTitle;
+    window.removeEventListener("afterprint", cleanup);
+  };
+  window.addEventListener("afterprint", cleanup);
+
   window.print();
-  element.classList.remove("printing");
-  document.title = originalTitle;
 }

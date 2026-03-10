@@ -28,6 +28,15 @@ export function extractPlaceholders(html: string): PlaceholderField[] {
   return fields;
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 /**
  * Replaces all placeholder tokens in the template HTML with the provided values.
  */
@@ -39,8 +48,8 @@ export function renderTemplate(
     /\{\{(\w+)\|([^|}]+)(?:\|\w+)?\}\}/g,
     (_match, key: string, label: string) => {
       const val = values[key];
-      if (!val) return `<span class="placeholder-empty">[${label}]</span>`;
-      return val.replace(/\n/g, "<br/>");
+      if (!val) return `<span class="placeholder-empty">[${escapeHtml(label)}]</span>`;
+      return escapeHtml(val).replace(/\n/g, "<br/>");
     }
   );
 }
