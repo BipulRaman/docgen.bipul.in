@@ -14,8 +14,16 @@ function App() {
   const [formValues, setFormValues] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    document.title = selectedTemplate ? selectedTemplate.name : "DocGen";
-  }, [selectedTemplate]);
+    if (!selectedTemplate) {
+      document.title = "DocGen";
+      return;
+    }
+    const titleTemplate = selectedTemplate.title ?? selectedTemplate.name;
+    document.title = titleTemplate.replace(
+      /_#(\w+)#_/g,
+      (_, key: string) => (formValues[key] || "").replace(/ /g, "_")
+    );
+  }, [selectedTemplate, formValues]);
   const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const template =
       letterTemplates.find((t) => t.id === e.target.value) ?? null;

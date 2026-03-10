@@ -1,6 +1,7 @@
 export interface LetterTemplate {
   id: string;
   name: string;
+  title?: string;
   html: string;
 }
 
