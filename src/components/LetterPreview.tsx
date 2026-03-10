@@ -1,4 +1,4 @@
-import { useRef, useMemo, useCallback } from "react";
+import { useMemo } from "react";
 import type { LetterTemplate } from "../types";
 import { renderTemplate } from "../placeholders";
 import { exportToPdf } from "../exportPdf";
@@ -9,28 +9,21 @@ interface Props {
 }
 
 function LetterPreview({ template, values }: Props) {
-  const previewRef = useRef<HTMLDivElement>(null);
-
   const renderedHtml = useMemo(
     () => renderTemplate(template.html, values),
     [template.html, values]
   );
 
-  const handleExport = useCallback(() => {
-    if (!previewRef.current) return;
-    exportToPdf(previewRef.current, template.name);
-  }, [template.name]);
-
   return (
     <div className="preview-wrapper">
       <div className="preview-toolbar">
         <span className="preview-title">{template.name} — Preview</span>
-        <button className="btn-export" onClick={handleExport} type="button">
+        <button className="btn-export" onClick={exportToPdf} type="button">
           Export PDF
         </button>
       </div>
 
-      <div className="a4-page" ref={previewRef}>
+      <div className="letter-page">
         <div dangerouslySetInnerHTML={{ __html: renderedHtml }} />
       </div>
     </div>

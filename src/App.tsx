@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { loadTemplates } from "./templateLoader";
 import type { LetterTemplate } from "./types";
 import TemplateForm from "./components/TemplateForm";
@@ -13,6 +13,9 @@ function App() {
     useState<LetterTemplate | null>(null);
   const [formValues, setFormValues] = useState<Record<string, string>>({});
 
+  useEffect(() => {
+    document.title = selectedTemplate ? selectedTemplate.name : "DocGen";
+  }, [selectedTemplate]);
   const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const template =
       letterTemplates.find((t) => t.id === e.target.value) ?? null;
