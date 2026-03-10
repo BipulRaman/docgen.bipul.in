@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/exportpdf.ts","./src/main.tsx","./src/placeholders.ts","./src/templateloader.ts","./src/types.ts","./src/vite-env.d.ts","./src/components/letterpreview.tsx","./src/components/pinscreen.tsx","./src/components/templateform.tsx"],"version":"5.9.3"}

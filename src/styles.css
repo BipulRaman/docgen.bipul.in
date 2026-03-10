@@ -336,18 +336,31 @@ textarea.form-input {
 
 /* ===== Print / PDF Styles ===== */
 @media print {
-  .app-header,
-  .sidebar,
-  .preview-toolbar {
-    display: none;
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
   }
 
-  .preview-panel {
-    padding: 0;
+  /* Show only the printing element and its children */
+  .a4-page.printing,
+  .a4-page.printing * {
+    visibility: visible;
   }
 
-  .a4-page {
+  .a4-page.printing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 210mm;
+    min-height: auto;
+    padding: 10mm 20mm 25mm;
+    margin: 0;
     box-shadow: none;
+    background: #fff;
+  }
+
+  @page {
+    size: A4;
     margin: 0;
   }
 }

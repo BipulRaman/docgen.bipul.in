@@ -1,5 +1,5 @@
 {
-  "name": "letter-gen",
+  "name": "doc-gen",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

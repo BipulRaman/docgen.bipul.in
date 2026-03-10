@@ -16,9 +16,9 @@ function LetterPreview({ template, values }: Props) {
     [template.html, values]
   );
 
-  const handleExport = useCallback(async () => {
+  const handleExport = useCallback(() => {
     if (!previewRef.current) return;
-    await exportToPdf(previewRef.current, template.name);
+    exportToPdf(previewRef.current, template.name);
   }, [template.name]);
 
   return (
