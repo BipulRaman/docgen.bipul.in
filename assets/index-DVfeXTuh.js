@@ -49,8 +49,7 @@ Error generating stack: `+u.message+`
       <td style="text-align: center; vertical-align: middle;">
         <div style="font-size: 20pt; font-weight: 700; color: #1a1a1a;">Bihar Navodaya Pariwar</div>
         <div style="font-size: 10pt; color: #555; margin-top: 2px;">
-          Aashirwad Residency, near Keshav Hospital, Saguna More,<br/>
-          Kaliket Nagar, Patna, Bihar 801503
+          Flat #204, Aashirwad Residency, Behind Keshav Hospital, Saguna More, Patna, Bihar
         </div>
         <div style="font-size: 10pt; color: #555; margin-top: 2px;">
           www.biharnavodayapariwar.com &nbsp;|&nbsp; biharnavodayapariwar@gmail.com
