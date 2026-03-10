@@ -178,12 +178,12 @@ textarea.form-input {
   background: #1e40af;
 }
 
-/* ===== A4 Page ===== */
+/* ===== Letter Page ===== */
 .a4-page {
-  width: 210mm;
-  min-height: 297mm;
+  width: 215.9mm;
+  min-height: 279.4mm;
   background: #fff;
-  padding: 10mm 20mm 25mm;
+  padding: 8mm 12mm 12mm;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   font-size: 12pt;
   line-height: 1.7;
@@ -366,14 +366,14 @@ textarea.form-input {
   .a4-page {
     width: 100% !important;
     min-height: auto !important;
-    padding: 10mm 20mm 25mm !important;
+    padding: 8mm 12mm 12mm !important;
     margin: 0 !important;
     box-shadow: none !important;
     background: #fff !important;
   }
 
   @page {
-    size: A4;
+    size: letter;
     margin: 0;
   }
 }
